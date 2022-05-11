@@ -11,7 +11,7 @@ Miini console game ( BOOLeO ), reviving a long-forgotten board game.
  ## Team    <a name = "team">PhysicsTech</a>
 1. Simeon Redanski - [SERedanski20](https://github.com/SERedanski20)
 2. Ivan Dadakov - [IIDadakov20](https://github.com/IIDadakov20)
-3. Samuil Shkvarla - [DNDonchev20](https://github.com/DNDonchev20)
+3. Samuil Shkvarla - [SLShkvarla20](https://github.com/SLShkvarla20)
 4. Kaloyan Lambov -  [KBLambov20](https://github.com/KBLambov20)
 ---------------------------------------------- --------------------------------------
 ###
@@ -64,8 +64,8 @@ logic pyramid while rendering as little damage to one’s own pyramid in the pro
 Some logic gates are more robust than others to a change to their inputs. 
 Therefore, not all logic gate cards have the same strategic value.
 
-The standard edition of the game does not contain NAND, NOR, or XNOR gates. It is possible, therefore, for a player to arrive at an 
-unresolvable pair of inputs.
+The standard edition of the game does not contain NAND, NOR, or XNOR gates. It is possible,
+therefore, for a player to arrive at an unresolvable pair of inputs.
 ```
 ---------------------------------------------- --------------------------------------
 
