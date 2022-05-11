@@ -33,8 +33,8 @@ Miini console game ( BOOLeO ), reviving a long-forgotten board game.
 # 🎉 Have fun
 
 ---------------------------------------------- --------------------------------------
-Deck:
-It consists 64 cards:
+## Deck:
+It consists 48 cards:
 We using three Boolean operators *AND*, *OR*, and *XOR*
 1. 8 *OR* cards resolving to 1
 2. 8 *OR* cards resolving to 0
