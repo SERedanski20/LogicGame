@@ -19,7 +19,7 @@ Miini console game ( BOOLeO ), reviving a long-forgotten board game.
  ---
 
 
-## <img src="https://www.ocs-consulting.nl/wp-content/uploads/2018/02/ocs-consulting-technology-icon.png" width="40"> Used technologies
+## <img src="https://miro.medium.com/max/1400/1*44799UW8y4KGlJb36fTD7Q.gif" width="40"> Used technologies
 - <img src="https://media.discordapp.net/attachments/815253581149896790/818134527842582578/Visual_Studio_Icon_2019.svg.png?width=541&height=541" width="20"> Visual studio - IDE
 -  <img src="https://media.discordapp.net/attachments/815253581149896790/818133539903111188/Microsoft_Word_logo.png" width="20"> Word - Documentation
 - <img src="https://media.discordapp.net/attachments/815253581149896790/818136011359518780/kisspng-microsoft-powerpoint-computer-software-microsoft-o-5b3b3927c75c49.3318087715306079118166-rem.png" width="20"> PowerPoint - Presentation
