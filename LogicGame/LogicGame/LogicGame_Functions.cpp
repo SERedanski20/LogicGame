@@ -147,17 +147,20 @@ void print_start_cards(bool* start_up, bool* start_down)
     cout << endl;
 }
 
-void move_up(int hand_card, int line_position, bool* start_up, Card* first_line_up, vector<Card>& player_one)
+void move_up_first(bool* half, int hand_card, int line_position, bool* start_up, Card* first_line_up, vector<Card>& player_one)
 {
     if (player_one[hand_card].operation == 0)
     {
         if (player_one[hand_card].value == (start_up[line_position] & start_up[line_position + 1]))
         {
             first_line_up[line_position] = player_one[hand_card];
+            *half = false;
         }
         else
         {
+            cout << "----------------------------------------------" << endl;
             cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
         }
     }
     else if (player_one[hand_card].operation == 1)
@@ -165,10 +168,13 @@ void move_up(int hand_card, int line_position, bool* start_up, Card* first_line_
         if (player_one[hand_card].value == (start_up[line_position] | start_up[line_position + 1]))
         {
             first_line_up[line_position] = player_one[hand_card];
+            *half = false;
         }
         else
         {
+            cout << "----------------------------------------------" << endl;
             cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
         }
 
     }
@@ -177,25 +183,31 @@ void move_up(int hand_card, int line_position, bool* start_up, Card* first_line_
         if (player_one[hand_card].value == (start_up[line_position] ^ start_up[line_position + 1]))
         {
             first_line_up[line_position] = player_one[hand_card];
+            *half = false;
         }
         else
         {
+            cout << "----------------------------------------------" << endl;
             cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
         }
     }
 }
 
-void move_down(int hand_card, int line_position, bool* start_down, Card* first_line_down, vector<Card>& player_two)
+void move_down_first(bool* half, int hand_card, int line_position, bool* start_down, Card* first_line_down, vector<Card>& player_two)
 {
     if (player_two[hand_card].operation == 0)
     {
         if (player_two[hand_card].value == (start_down[line_position] & start_down[line_position + 1]))
         {
             first_line_down[line_position] = player_two[hand_card];
+            *half = true;
         }
         else
         {
+            cout << "----------------------------------------------" << endl;
             cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
         }
     }
     else if (player_two[hand_card].operation == 1)
@@ -203,10 +215,13 @@ void move_down(int hand_card, int line_position, bool* start_down, Card* first_l
         if (player_two[hand_card].value == (start_down[line_position] | start_down[line_position + 1]))
         {
             first_line_down[line_position] = player_two[hand_card];
+            *half = true;
         }
         else
         {
+            cout << "----------------------------------------------" << endl;
             cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
         }
     }
     else if (player_two[hand_card].operation == 2)
@@ -214,10 +229,13 @@ void move_down(int hand_card, int line_position, bool* start_down, Card* first_l
         if (player_two[hand_card].value == (start_down[line_position] ^ start_down[line_position + 1]))
         {
             first_line_down[line_position] = player_two[hand_card];
+            *half = true;
         }
         else
         {
+            cout << "----------------------------------------------" << endl;
             cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
         }
     }
 }
@@ -246,6 +264,258 @@ void print_first_line_down(Card* first_line_down)
         if (first_line_down[i].value == 0 || first_line_down[i].value == 1)
         {
             cout << first_line_down[i].value << " ";
+        }
+        else
+        {
+            cout << "- ";
+        }
+    }
+    cout << endl;
+}
+
+void move_up_second(bool* half, int hand_card, int line_position, Card* first_line_up, Card* second_line_up, vector<Card>& player_one)
+{
+    if (player_one[hand_card].operation == 0)
+    {
+        if (player_one[hand_card].value == (first_line_up[line_position].value & first_line_up[line_position + 1].value))
+        {
+            second_line_up[line_position] = player_one[hand_card];
+            *half = false;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+    else if (player_one[hand_card].operation == 1)
+    {
+        if (player_one[hand_card].value == (first_line_up[line_position].value | first_line_up[line_position + 1].value))
+        {
+            second_line_up[line_position] = player_one[hand_card];
+            *half = false;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+    if (player_one[hand_card].operation == 2)
+    {
+        if (player_one[hand_card].value == (first_line_up[line_position].value ^ first_line_up[line_position + 1].value))
+        {
+            second_line_up[line_position] = player_one[hand_card];
+            *half = false;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+}
+
+void move_down_second(bool* half, int hand_card, int line_position, Card* first_line_down, Card* second_line_down, vector<Card>& player_two)
+{
+    if (player_two[hand_card].operation == 0)
+    {
+        if (player_two[hand_card].value == (first_line_down[line_position].value & first_line_down[line_position + 1].value))
+        {
+            second_line_down[line_position] = player_two[hand_card];
+            *half = true;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+    else if (player_two[hand_card].operation == 1)
+    {
+        if (player_two[hand_card].value == (first_line_down[line_position].value | first_line_down[line_position + 1].value))
+        {
+            second_line_down[line_position] = player_two[hand_card];
+            *half = true;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+    else if (player_two[hand_card].operation == 2)
+    {
+        if (player_two[hand_card].value == (first_line_down[line_position].value ^ first_line_down[line_position + 1].value))
+        {
+            second_line_down[line_position] = player_two[hand_card];
+            *half = true;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+}
+
+void print_second_line_up(Card* second_line_up)
+{
+    cout << "  ";
+    for (int i = 0; i < 4; i++)
+    {
+        if (second_line_up[i].value == 0 || second_line_up[i].value == 1)
+        {
+            cout << second_line_up[i].value << " ";
+        }
+        else
+        {
+            cout << "- ";
+        }
+    }
+    cout << endl;
+}
+
+void print_second_line_down(Card* second_line_down)
+{
+    cout << "  ";
+    for (int i = 0; i < 4; i++)
+    {
+        if (second_line_down[i].value == 0 || second_line_down[i].value == 1)
+        {
+            cout << second_line_down[i].value << " ";
+        }
+        else
+        {
+            cout << "- ";
+        }
+    }
+    cout << endl;
+}
+
+void move_up_third(bool* half, int hand_card, int line_position, Card* second_line_up, Card* third_line_up, vector<Card>& player_one)
+{
+    if (player_one[hand_card].operation == 0)
+    {
+        if (player_one[hand_card].value == (second_line_up[line_position].value & second_line_up[line_position + 1].value))
+        {
+            third_line_up[line_position] = player_one[hand_card];
+            *half = false;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+    else if (player_one[hand_card].operation == 1)
+    {
+        if (player_one[hand_card].value == (second_line_up[line_position].value | second_line_up[line_position + 1].value))
+        {
+            third_line_up[line_position] = player_one[hand_card];
+            *half = false;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+    else if (player_one[hand_card].operation == 2)
+    {
+        if (player_one[hand_card].value == (second_line_up[line_position].value ^ second_line_up[line_position + 1].value))
+        {
+            third_line_up[line_position] = player_one[hand_card];
+            *half = false;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+}
+
+void move_down_third(bool* half, int hand_card, int line_position, Card* second_line_down, Card* third_line_down, vector<Card>& player_two)
+{
+    if (player_two[hand_card].operation == 0)
+    {
+        if (player_two[hand_card].value == (second_line_down[line_position].value & second_line_down[line_position + 1].value))
+        {
+            third_line_down[line_position] = player_two[hand_card];
+            *half = true;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+    else if (player_two[hand_card].operation == 1)
+    {
+        if (player_two[hand_card].value == (second_line_down[line_position].value | second_line_down[line_position + 1].value))
+        {
+            third_line_down[line_position] = player_two[hand_card];
+            *half = true;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+    else if (player_two[hand_card].operation == 2)
+    {
+        if (player_two[hand_card].value == (second_line_down[line_position].value ^ second_line_down[line_position + 1].value))
+        {
+            third_line_down[line_position] = player_two[hand_card];
+            *half = true;
+        }
+        else
+        {
+            cout << "----------------------------------------------" << endl;
+            cout << "You can't place this card here!" << endl;
+            cout << "----------------------------------------------" << endl << endl;
+        }
+    }
+}
+
+void print_third_line_up(Card* third_line_up)
+{
+    cout << "   ";
+    for (int i = 0; i < 3; i++)
+    {
+        if (third_line_up[i].value == 0 || third_line_up[i].value == 1)
+        {
+            cout << third_line_up[i].value << " ";
+        }
+        else
+        {
+            cout << "- ";
+        }
+    }
+    cout << endl;
+}
+
+void print_third_line_down(Card* third_line_down)
+{
+    cout << "   ";
+    for (int i = 0; i < 3; i++)
+    {
+        if (third_line_down[i].value == 0 || third_line_down[i].value == 1)
+        {
+            cout << third_line_down[i].value << " ";
         }
         else
         {
