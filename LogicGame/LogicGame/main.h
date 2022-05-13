@@ -11,7 +11,7 @@ using namespace std;
 
 enum Value { FALSE, TRUE };
 enum Operator { AND, OR, XOR };
-
+//main strctures (variables)
 struct Card {
     Value value;
     Operator operation;
@@ -24,7 +24,7 @@ struct Deck {
     vector<Card>cards;
     int deck_size = 48;
 };
-
+//Booleo doc functions
 void initialize(Deck& deck);
 
 void shuffle(Deck& deck);
