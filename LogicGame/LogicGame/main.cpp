@@ -37,14 +37,20 @@ int main()
 
     for (int i = 0; i < 100; i++)
     {
-        cout << " Player One:" << endl;
-        print_hand(player_one);
-        cout << endl << endl;
-        cout << " Player Two:" << endl;
-        print_hand(player_two);
-        cout << endl;
-
-        cout << endl;
+        if (half)
+        {
+            cout << endl << "   Player One:" << endl;
+            cout << endl << "   Cards:" << endl;
+            print_hand(player_one);
+            cout << endl << endl;
+        }
+        else
+        {
+            cout << endl << "   Player Two:" << endl;
+            cout << endl << "   Cards:" << endl;
+            print_hand(player_two);
+            cout << endl;
+        }
 
         print_third_line_up(third_line_up);
         print_second_line_up(second_line_up);
@@ -56,48 +62,39 @@ int main()
 
         cout << endl;
 
-        if (half)
-        {
-            cout << " Player One:" << endl;
-        }
-        else
-        {
-            cout << " Player Two:" << endl;
-        }
-
-        cout << " (1, 2, 3, 4, 5) Select a line: ";
+        cout << "   (1, 2, 3, 4, 5) Select a line: ";
         cin >> line;
 
-        cout << " (1, 2, 3, 4, 5, 6, 7) Select a card: ";
+        cout << "   (1, 2, 3, 4, 5, 6, 7) Select a card: ";
         cin >> hand_card;
 
         if (line == 1)
         {
-            cout << " (1, 2, 3, 4, 5) Select a position: ";
+            cout << "   (1, 2, 3, 4, 5) Select a position: ";
             cin >> line_position;
             cout << endl;
         }
         else if(line == 2)
         {
-            cout << " (1, 2, 3, 4) Select a position: ";
+            cout << "   (1, 2, 3, 4) Select a position: ";
             cin >> line_position;
             cout << endl;
         }
         else if (line == 3)
         {
-            cout << " (1, 2, 3) Select a position: ";
+            cout << "   (1, 2, 3) Select a position: ";
             cin >> line_position;
             cout << endl;
         }
         else if (line == 4)
         {
-            cout << " (1, 2) Select a position: ";
+            cout << "   (1, 2) Select a position: ";
             cin >> line_position;
             cout << endl;
         }
         else
         {
-            cout << " (1) Finish!: ";
+            cout << "   (1) Finish!: ";
             cin >> line_position;
             cout << endl;
         }
