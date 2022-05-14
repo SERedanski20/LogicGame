@@ -1,3 +1,6 @@
-﻿  main.cpp
+﻿  LogicGame_Functions.cpp
+  main.cpp
 C:\Users\User\Documents\GitHub\LogicGame\LogicGame\LogicGame\main.cpp(5,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+C:\Users\User\Documents\GitHub\LogicGame\LogicGame\LogicGame\LogicGame_Functions.cpp(456): warning C4715: 'finish': not all control paths return a value
   LogicGame.vcxproj -> C:\Users\User\Documents\GitHub\LogicGame\LogicGame\x64\Debug\LogicGame.exe
