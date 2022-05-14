@@ -39,6 +39,8 @@ void print_hand(const vector<Card>& hand);
 
 void start_shuffle(bool* start_up, bool* start_down);
 
+void select_move(vector<Card>& player, Deck& deck, int* line, int* hand_card, int* line_position, bool add_card, bool* half);
+
 void print_start_cards(bool* start_cards, bool* start_down);
 
 void print_first_line_up(Card* first_line_up);

@@ -1,2 +1,3 @@
-﻿  LogicGame_Functions.cpp
+﻿  main.cpp
+C:\Users\User\Documents\GitHub\LogicGame\LogicGame\LogicGame\main.cpp(5,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   LogicGame.vcxproj -> C:\Users\User\Documents\GitHub\LogicGame\LogicGame\x64\Debug\LogicGame.exe

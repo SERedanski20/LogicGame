@@ -34,6 +34,7 @@ int main()
     int line;
     int hand_card;
     int line_position;
+    bool add_card = false;
 
     for (int i = 0; i < 100; i++)
     {
@@ -43,6 +44,24 @@ int main()
             cout << endl << "   Cards:" << endl;
             print_hand(player_one);
             cout << endl << endl;
+
+            print_third_line_up(third_line_up);
+            print_second_line_up(second_line_up);
+            print_first_line_up(first_line_up);
+            print_start_cards(start_up, start_down);
+            print_first_line_down(first_line_down);
+            print_second_line_down(second_line_down);
+            print_third_line_down(third_line_down);
+
+            cout << endl;
+
+            if (!deck.cards.empty())
+            {
+                cout << "   (1 - Yes, 0 - No) Do you want new card?: ";
+                cin >> add_card;
+            }
+
+            select_move(player_one, deck, &line, &hand_card, &line_position, add_card, &half);
         }
         else
         {
@@ -50,55 +69,25 @@ int main()
             cout << endl << "   Cards:" << endl;
             print_hand(player_two);
             cout << endl;
-        }
 
-        print_third_line_up(third_line_up);
-        print_second_line_up(second_line_up);
-        print_first_line_up(first_line_up);
-        print_start_cards(start_up, start_down);
-        print_first_line_down(first_line_down);
-        print_second_line_down(second_line_down);
-        print_third_line_down(third_line_down);
+            print_third_line_up(third_line_up);
+            print_second_line_up(second_line_up);
+            print_first_line_up(first_line_up);
+            print_start_cards(start_up, start_down);
+            print_first_line_down(first_line_down);
+            print_second_line_down(second_line_down);
+            print_third_line_down(third_line_down);
 
-        cout << endl;
+            cout << endl;
 
-        cout << "   (1, 2, 3, 4, 5) Select a line: ";
-        cin >> line;
+            if (!deck.cards.empty())
+            {
+                cout << "   (1 - Yes, 0 - No) Do you want new card?: ";
+                cin >> add_card;
+            }
 
-        cout << "   (1, 2, 3, 4, 5, 6, 7) Select a card: ";
-        cin >> hand_card;
-
-        if (line == 1)
-        {
-            cout << "   (1, 2, 3, 4, 5) Select a position: ";
-            cin >> line_position;
-            cout << endl;
+            select_move(player_two, deck, &line, &hand_card, &line_position, add_card, &half);
         }
-        else if(line == 2)
-        {
-            cout << "   (1, 2, 3, 4) Select a position: ";
-            cin >> line_position;
-            cout << endl;
-        }
-        else if (line == 3)
-        {
-            cout << "   (1, 2, 3) Select a position: ";
-            cin >> line_position;
-            cout << endl;
-        }
-        else if (line == 4)
-        {
-            cout << "   (1, 2) Select a position: ";
-            cin >> line_position;
-            cout << endl;
-        }
-        else
-        {
-            cout << "   (1) Finish!: ";
-            cin >> line_position;
-            cout << endl;
-        }
-        
 
         system("CLS");
 
@@ -114,7 +103,7 @@ int main()
             }
             else if (line == 3)
             {
-                move_up_second(&half, hand_card, line_position, second_line_up, third_line_up, player_one);
+                move_up_third(&half, hand_card, line_position, second_line_up, third_line_up, player_one);
             }
         }
         else
@@ -129,7 +118,7 @@ int main()
             }
             else if (line == 3)
             {
-                move_down_second(&half, hand_card, line_position, second_line_down, third_line_down, player_two);
+                move_down_third(&half, hand_card, line_position, second_line_down, third_line_down, player_two);
             }
         }
     }
