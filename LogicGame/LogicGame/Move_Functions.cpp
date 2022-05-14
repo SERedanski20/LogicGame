@@ -6,10 +6,20 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
     {
         if (player_one[hand_card - 1].value == (start_up[line_position - 1] & start_up[line_position]))
         {
-            first_line_up[line_position - 1] = player_one[hand_card - 1];
-            player_one.erase(player_one.begin() + (line_position - 1));
-            *half = false;
-            *error = true;
+            if (first_line_up[line_position - 1].value != 0 && first_line_up[line_position - 1].value != 1)
+            {
+                first_line_up[line_position - 1] = player_one[hand_card - 1];
+                player_one.erase(player_one.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -23,10 +33,20 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
     {
         if (player_one[hand_card - 1].value == (start_up[line_position - 1] | start_up[line_position]))
         {
-            first_line_up[line_position - 1] = player_one[hand_card - 1];
-            player_one.erase(player_one.begin() + (line_position - 1));
-            *half = false;
-            *error = true;
+            if (first_line_up[line_position - 1].value != 0 && first_line_up[line_position - 1].value != 1)
+            {
+                first_line_up[line_position - 1] = player_one[hand_card - 1];
+                player_one.erase(player_one.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -41,10 +61,20 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
     {
         if (player_one[hand_card - 1].value == (start_up[line_position - 1] ^ start_up[line_position]))
         {
-            first_line_up[line_position - 1] = player_one[hand_card - 1];
-            player_one.erase(player_one.begin() + (line_position - 1));
-            *half = false;
-            *error = true;
+            if (first_line_up[line_position - 1].value != 0 && first_line_up[line_position - 1].value != 1)
+            {
+                first_line_up[line_position - 1] = player_one[hand_card - 1];
+                player_one.erase(player_one.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -62,10 +92,20 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
     {
         if (player_two[hand_card - 1].value == (start_down[line_position - 1] & start_down[line_position]))
         {
-            first_line_down[line_position - 1] = player_two[hand_card - 1];
-            player_two.erase(player_two.begin() + (line_position - 1));
-            *half = true;
-            *error = true;
+            if (first_line_down[line_position - 1].value != 0 && first_line_down[line_position - 1].value != 1)
+            {
+                first_line_down[line_position - 1] = player_two[hand_card - 1];
+                player_two.erase(player_two.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -79,10 +119,20 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
     {
         if (player_two[hand_card - 1].value == (start_down[line_position - 1] | start_down[line_position]))
         {
-            first_line_down[line_position - 1] = player_two[hand_card - 1];
-            player_two.erase(player_two.begin() + (line_position - 1));
-            *half = true;
-            *error = true;
+            if (first_line_down[line_position - 1].value != 0 && first_line_down[line_position - 1].value != 1)
+            {
+                first_line_down[line_position - 1] = player_two[hand_card - 1];
+                player_two.erase(player_two.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -96,10 +146,20 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
     {
         if (player_two[hand_card - 1].value == (start_down[line_position - 1] ^ start_down[line_position]))
         {
-            first_line_down[line_position - 1] = player_two[hand_card - 1];
-            player_two.erase(player_two.begin() + (line_position - 1));
-            *half = true;
-            *error = true;
+            if (first_line_down[line_position - 1].value != 0 && first_line_down[line_position - 1].value != 1)
+            {
+                first_line_down[line_position - 1] = player_two[hand_card - 1];
+                player_two.erase(player_two.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -117,10 +177,20 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
     {
         if (player_one[hand_card - 1].value == (up[line_position - 1].value & up[line_position].value))
         {
-            line_up[line_position - 1] = player_one[hand_card - 1];
-            player_one.erase(player_one.begin() + (line_position - 1));
-            *half = false;
-            *error = true;
+            if (line_up[line_position - 1].value != 0 && line_up[line_position - 1].value != 1)
+            {
+                line_up[line_position - 1] = player_one[hand_card - 1];
+                player_one.erase(player_one.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -134,10 +204,20 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
     {
         if (player_one[hand_card - 1].value == (up[line_position - 1].value | up[line_position].value))
         {
-            line_up[line_position - 1] = player_one[hand_card - 1];
-            player_one.erase(player_one.begin() + (line_position - 1));
-            *half = false;
-            *error = true;
+            if (line_up[line_position - 1].value != 0 && line_up[line_position - 1].value != 1)
+            {
+                line_up[line_position - 1] = player_one[hand_card - 1];
+                player_one.erase(player_one.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -151,10 +231,20 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
     {
         if (player_one[hand_card - 1].value == (up[line_position - 1].value ^ up[line_position].value))
         {
-            line_up[line_position - 1] = player_one[hand_card - 1];
-            player_one.erase(player_one.begin() + (line_position - 1));
-            *half = false;
-            *error = true;
+            if (line_up[line_position - 1].value != 0 && line_up[line_position - 1].value != 1)
+            {
+                line_up[line_position - 1] = player_one[hand_card - 1];
+                player_one.erase(player_one.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -172,10 +262,20 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
     {
         if (player_two[hand_card - 1].value == (down[line_position - 1].value & down[line_position].value))
         {
-            line_down[line_position - 1] = player_two[hand_card - 1];
-            player_two.erase(player_two.begin() + (line_position - 1));
-            *half = true;
-            *error = true;
+            if (line_down[line_position - 1].value != 0 && line_down[line_position - 1].value != 1)
+            {
+                line_down[line_position - 1] = player_two[hand_card - 1];
+                player_two.erase(player_two.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -189,10 +289,20 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
     {
         if (player_two[hand_card - 1].value == (down[line_position - 1].value | down[line_position].value))
         {
-            line_down[line_position - 1] = player_two[hand_card - 1];
-            player_two.erase(player_two.begin() + (line_position - 1));
-            *half = true;
-            *error = true;
+            if (line_down[line_position - 1].value != 0 && line_down[line_position - 1].value != 1)
+            {
+                line_down[line_position - 1] = player_two[hand_card - 1];
+                player_two.erase(player_two.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -206,10 +316,20 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
     {
         if (player_two[hand_card - 1].value == (down[line_position - 1].value ^ down[line_position].value))
         {
-            line_down[line_position - 1] = player_two[hand_card - 1];
-            player_two.erase(player_two.begin() + (line_position - 1));
-            *half = true;
-            *error = true;
+            if (line_down[line_position - 1].value != 0 && line_down[line_position - 1].value != 1)
+            {
+                line_down[line_position - 1] = player_two[hand_card - 1];
+                player_two.erase(player_two.begin() + (line_position - 1));
+                *half = false;
+                *error = true;
+            }
+            else
+            {
+                cout << "   ----------------------------------------------" << endl;
+                cout << "        There is already a card hare!" << endl;
+                cout << "   ----------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
         else
         {
@@ -232,46 +352,146 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
         {
             if (*line == 1)
             {
-                move_up_first(half, *hand_card,* line_position, start_up, first_line_up, player_one, error);
+                if (*line_position > 5 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_up_first(half, *hand_card,* line_position, start_up, first_line_up, player_one, error);
+                }
             }
             else if (*line == 2)
             {
-                move_up(half, *hand_card, *line_position, first_line_up, second_line_up, player_one, error);
+                if (*line_position > 4 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_up(half, *hand_card, *line_position, first_line_up, second_line_up, player_one, error);
+                }
             }
             else if (*line == 3)
             {
-                move_up(half, *hand_card, *line_position, second_line_up, third_line_up, player_one, error);
+                if (*line_position > 3 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_up(half, *hand_card, *line_position, second_line_up, third_line_up, player_one, error);
+                }
             }
             else if (*line == 4)
             {
-                move_up(half, *hand_card, *line_position, third_line_up, fourth_line_up, player_one, error);
+                if (*line_position > 2 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_up(half, *hand_card, *line_position, third_line_up, fourth_line_up, player_one, error);
+                }
             }
             else if (*line == 5)
             {
-                move_up(half, *hand_card, *line_position, fourth_line_up, finish_up, player_one, error);
+                if (*line_position > 1 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_up(half, *hand_card, *line_position, fourth_line_up, finish_up, player_one, error);
+                }
             }
         }
         else
         {
             if (*line == 1)
             {
-                move_down_first(half, *hand_card, *line_position, start_down, first_line_down, player_two, error);
+                if (*line_position > 5 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_down_first(half, *hand_card, *line_position, start_down, first_line_down, player_two, error);
+                }
             }
             else if (*line == 2)
             {
-                move_down(half, *hand_card, *line_position, first_line_down, second_line_down, player_two, error);
+                if (*line_position > 4 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_down(half, *hand_card, *line_position, first_line_down, second_line_down, player_two, error);
+                }
             }
             else if (*line == 3)
             {
-                move_down(half, *hand_card, *line_position, second_line_down, third_line_down, player_two, error);
+                if (*line_position > 3 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_down(half, *hand_card, *line_position, second_line_down, third_line_down, player_two, error);
+                }
             }
             else if (*line == 4)
             {
-                move_up(half, *hand_card, *line_position, third_line_down, fourth_line_down, player_two, error);
+                if (*line_position > 2 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_up(half, *hand_card, *line_position, third_line_down, fourth_line_down, player_two, error);
+                }
             }
             else if (*line == 5)
             {
-                move_up(half, *hand_card, *line_position, fourth_line_down, finish_down, player_two, error);
+                if (*line_position > 1 || *hand_card > 5)
+                {
+                    cout << "   ----------------------------------------------" << endl;
+                    cout << "            Error!, too big number." << endl;
+                    cout << "   ----------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    move_up(half, *hand_card, *line_position, fourth_line_down, finish_down, player_two, error);
+                }
             }
         }
     }
