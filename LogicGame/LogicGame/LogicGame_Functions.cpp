@@ -109,7 +109,7 @@ void print_hand(const vector<Card>& hand)
 
     for (Card c : hand)
     {
-        cout << " " << counter << "   ";
+        cout << "   " << counter << "   ";
         print_card(c);
         counter++;
     }
@@ -138,14 +138,14 @@ void start_shuffle(bool* start_up, bool* start_down)
 
 void print_start_cards(bool* start_up, bool* start_down)
 {
-    cout << setw(10);
+    cout << setw(13);
     for (int i = 0; i < 6; i++)
     {
         cout << start_up[i] << " ";
     }
     cout << endl;
 
-    cout << setw(10);
+    cout << setw(13);
     for (int i = 0; i < 6; i++)
     {
         cout << start_down[i] << " ";
@@ -160,6 +160,7 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
         if (player_one[hand_card - 1].value == (start_up[line_position - 1] & start_up[line_position]))
         {
             first_line_up[line_position - 1] = player_one[hand_card - 1];
+            player_one.erase(player_one.begin() + (line_position - 1));
             *half = false;
         }
         else
@@ -174,6 +175,7 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
         if (player_one[hand_card - 1].value == (start_up[line_position - 1] | start_up[line_position]))
         {
             first_line_up[line_position - 1] = player_one[hand_card - 1];
+            player_one.erase(player_one.begin() + (line_position - 1));
             *half = false;
         }
         else
@@ -189,6 +191,7 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
         if (player_one[hand_card - 1].value == (start_up[line_position - 1] ^ start_up[line_position]))
         {
             first_line_up[line_position - 1] = player_one[hand_card - 1];
+            player_one.erase(player_one.begin() + (line_position - 1));
             *half = false;
         }
         else
@@ -207,6 +210,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
         if (player_two[hand_card - 1].value == (start_down[line_position - 1] & start_down[line_position]))
         {
             first_line_down[line_position - 1] = player_two[hand_card - 1];
+            player_two.erase(player_two.begin() + (line_position - 1));
             *half = true;
         }
         else
@@ -221,6 +225,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
         if (player_two[hand_card - 1].value == (start_down[line_position - 1] | start_down[line_position]))
         {
             first_line_down[line_position - 1] = player_two[hand_card - 1];
+            player_two.erase(player_two.begin() + (line_position - 1));
             *half = true;
         }
         else
@@ -235,6 +240,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
         if (player_two[hand_card - 1].value == (start_down[line_position - 1] ^ start_down[line_position]))
         {
             first_line_down[line_position - 1] = player_two[hand_card - 1];
+            player_two.erase(player_two.begin() + (line_position - 1));
             *half = true;
         }
         else
@@ -248,7 +254,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
 
 void print_first_line_up(Card* first_line_up)
 {
-    cout << setw(10) << " ";
+    cout << setw(13) << " ";
     for (int i = 0; i < 5; i++)
     {
         if (first_line_up[i].value == 0 || first_line_up[i].value == 1)
@@ -265,7 +271,7 @@ void print_first_line_up(Card* first_line_up)
 
 void print_first_line_down(Card* first_line_down)
 {
-    cout << setw(10) << " ";
+    cout << setw(13) << " ";
     for (int i = 0; i < 5; i++)
     {
         if (first_line_down[i].value == 0 || first_line_down[i].value == 1)
@@ -287,6 +293,7 @@ void move_up_second(bool* half, int hand_card, int line_position, Card* first_li
         if (player_one[hand_card - 1].value == (first_line_up[line_position - 1].value & first_line_up[line_position].value))
         {
             second_line_up[line_position - 1] = player_one[hand_card - 1];
+            player_one.erase(player_one.begin() + (line_position - 1));
             *half = false;
         }
         else
@@ -301,6 +308,7 @@ void move_up_second(bool* half, int hand_card, int line_position, Card* first_li
         if (player_one[hand_card - 1].value == (first_line_up[line_position - 1].value | first_line_up[line_position].value))
         {
             second_line_up[line_position - 1] = player_one[hand_card - 1];
+            player_one.erase(player_one.begin() + (line_position - 1));
             *half = false;
         }
         else
@@ -315,6 +323,7 @@ void move_up_second(bool* half, int hand_card, int line_position, Card* first_li
         if (player_one[hand_card - 1].value == (first_line_up[line_position - 1].value ^ first_line_up[line_position].value))
         {
             second_line_up[line_position - 1] = player_one[hand_card - 1];
+            player_one.erase(player_one.begin() + (line_position - 1));
             *half = false;
         }
         else
@@ -333,6 +342,7 @@ void move_down_second(bool* half, int hand_card, int line_position, Card* first_
         if (player_two[hand_card - 1].value == (first_line_down[line_position - 1].value & first_line_down[line_position].value))
         {
             second_line_down[line_position - 1] = player_two[hand_card - 1];
+            player_two.erase(player_two.begin() + (line_position - 1));
             *half = true;
         }
         else
@@ -347,6 +357,7 @@ void move_down_second(bool* half, int hand_card, int line_position, Card* first_
         if (player_two[hand_card - 1].value == (first_line_down[line_position - 1].value | first_line_down[line_position].value))
         {
             second_line_down[line_position - 1] = player_two[hand_card - 1];
+            player_two.erase(player_two.begin() + (line_position - 1));
             *half = true;
         }
         else
@@ -361,6 +372,7 @@ void move_down_second(bool* half, int hand_card, int line_position, Card* first_
         if (player_two[hand_card - 1].value == (first_line_down[line_position - 1].value ^ first_line_down[line_position].value))
         {
             second_line_down[line_position - 1] = player_two[hand_card - 1];
+            player_two.erase(player_two.begin() + (line_position - 1));
             *half = true;
         }
         else
@@ -374,7 +386,7 @@ void move_down_second(bool* half, int hand_card, int line_position, Card* first_
 
 void print_second_line_up(Card* second_line_up)
 {
-    cout << setw(11) << " ";
+    cout << setw(14) << " ";
     for (int i = 0; i < 4; i++)
     {
         if (second_line_up[i].value == 0 || second_line_up[i].value == 1)
@@ -391,7 +403,7 @@ void print_second_line_up(Card* second_line_up)
 
 void print_second_line_down(Card* second_line_down)
 {
-    cout << setw(11) << " ";
+    cout << setw(14) << " ";
     for (int i = 0; i < 4; i++)
     {
         if (second_line_down[i].value == 0 || second_line_down[i].value == 1)
@@ -413,6 +425,7 @@ void move_up_third(bool* half, int hand_card, int line_position, Card* second_li
         if (player_one[hand_card - 1].value == (second_line_up[line_position - 1].value & second_line_up[line_position].value))
         {
             third_line_up[line_position - 1] = player_one[hand_card - 1];
+            player_one.erase(player_one.begin() + (line_position - 1));
             *half = false;
         }
         else
@@ -427,6 +440,7 @@ void move_up_third(bool* half, int hand_card, int line_position, Card* second_li
         if (player_one[hand_card - 1].value == (second_line_up[line_position - 1].value | second_line_up[line_position].value))
         {
             third_line_up[line_position - 1] = player_one[hand_card - 1];
+            player_one.erase(player_one.begin() + (line_position - 1));
             *half = false;
         }
         else
@@ -441,6 +455,7 @@ void move_up_third(bool* half, int hand_card, int line_position, Card* second_li
         if (player_one[hand_card - 1].value == (second_line_up[line_position - 1].value ^ second_line_up[line_position].value))
         {
             third_line_up[line_position - 1] = player_one[hand_card - 1];
+            player_one.erase(player_one.begin() + (line_position - 1));
             *half = false;
         }
         else
@@ -459,6 +474,7 @@ void move_down_third(bool* half, int hand_card, int line_position, Card* second_
         if (player_two[hand_card - 1].value == (second_line_down[line_position - 1].value & second_line_down[line_position].value))
         {
             third_line_down[line_position - 1] = player_two[hand_card - 1];
+            player_two.erase(player_two.begin() + (line_position - 1));
             *half = true;
         }
         else
@@ -473,6 +489,7 @@ void move_down_third(bool* half, int hand_card, int line_position, Card* second_
         if (player_two[hand_card - 1].value == (second_line_down[line_position - 1].value | second_line_down[line_position].value))
         {
             third_line_down[line_position - 1] = player_two[hand_card - 1];
+            player_two.erase(player_two.begin() + (line_position - 1));
             *half = true;
         }
         else
@@ -487,6 +504,7 @@ void move_down_third(bool* half, int hand_card, int line_position, Card* second_
         if (player_two[hand_card - 1].value == (second_line_down[line_position - 1].value ^ second_line_down[line_position].value))
         {
             third_line_down[line_position - 1] = player_two[hand_card - 1];
+            player_two.erase(player_two.begin() + (line_position - 1));
             *half = true;
         }
         else
@@ -500,7 +518,7 @@ void move_down_third(bool* half, int hand_card, int line_position, Card* second_
 
 void print_third_line_up(Card* third_line_up)
 {
-    cout << setw(12) << " ";
+    cout << setw(15) << " ";
     for (int i = 0; i < 3; i++)
     {
         if (third_line_up[i].value == 0 || third_line_up[i].value == 1)
@@ -512,13 +530,13 @@ void print_third_line_up(Card* third_line_up)
             cout << "- ";
         }
     }
-    cout << setw(15) << "player one";
+    cout << setw(18) << "player one";
     cout << endl;
 }
 
 void print_third_line_down(Card* third_line_down)
 {
-    cout << setw(12) << " ";
+    cout << setw(15) << " ";
     for (int i = 0; i < 3; i++)
     {
         if (third_line_down[i].value == 0 || third_line_down[i].value == 1)
@@ -530,6 +548,6 @@ void print_third_line_down(Card* third_line_down)
             cout << "- ";
         }
     }
-    cout << setw(15) << "player two";
+    cout << setw(18) << "player two";
     cout << endl;
 }
