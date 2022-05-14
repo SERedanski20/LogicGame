@@ -26,9 +26,16 @@ Miini console game ( BOOLeO ), reviving a long-forgotten board game.
 - <img src="https://media.discordapp.net/attachments/815253581149896790/818134368848969728/1043px-Microsoft_Excel_2013_logo.svg_.png?width=551&height=541" width="20"> Excel -  QA Documentation
 - 👩🏻‍💻 Programing language C++
 - <img src="https://ps.w.org/svgator/assets/icon.svg?rev=2425697" width="20"> SVGator - Logo
+- <img src="https://d33wubrfki0l68.cloudfront.net/d46686890230f394c4a5dd6008adf79bc600a240/cc827/images/transparent_icon.png" width="20"> Bannerbear - Social Media moderation 
 
 
----
+## How to Download for Win/Linux ❕
+---------------------------------------------- --------------------------------------
+
+```git 
+git clone https://github.com/SERedanski20/LogicGame.git
+```
+---------------------------------------------- --------------------------------------
 
 # 🎉 Have fun
 
