@@ -140,7 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="LogicGame_Functions.cpp" />
+    <ClCompile Include="General_Functions.cpp" />
+    <ClCompile Include="Move_Functions.cpp" />
+    <ClCompile Include="Print_Functions.cpp" />
+    <ClCompile Include="Shuffle_Functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />

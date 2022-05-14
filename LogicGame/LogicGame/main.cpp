@@ -57,17 +57,8 @@ int main()
             cout << endl << endl;
 
 
-            print_line_down(finish_up, 1, 4);
-            print_line_down(fourth_line_up, 2, 3);
-            print_line_up(third_line_up, 3, 2);
-            print_line_up(second_line_up, 4, 1);
-            print_line_up(first_line_up, 5, 0);
-            print_start_cards(start_up, start_down);
-            print_line_down(first_line_down, 5, 0);
-            print_line_down(second_line_down, 4, 1);
-            print_line_down(third_line_down, 3, 2);
-            print_line_down(fourth_line_down, 2, 3);
-            print_line_down(finish_down, 1, 4);
+            print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+                fourth_line_up, fourth_line_down, finish_up, finish_down);
 
             cout << endl << endl;
 
@@ -88,17 +79,8 @@ int main()
             cout << endl;
 
 
-            print_line_down(finish_up, 1, 4);
-            print_line_down(fourth_line_up, 2, 3);
-            print_line_up(third_line_up, 3, 2);
-            print_line_up(second_line_up, 4, 1);
-            print_line_up(first_line_up, 5, 0);
-            print_start_cards(start_up, start_down);
-            print_line_down(first_line_down, 5, 0);
-            print_line_down(second_line_down, 4, 1);
-            print_line_down(third_line_down, 3, 2);
-            print_line_down(fourth_line_down, 2, 3);
-            print_line_down(finish_down, 1, 4);
+            print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+                fourth_line_up, fourth_line_down, finish_up, finish_down);
 
             cout << endl << endl;
 
@@ -112,55 +94,9 @@ int main()
 
         system("CLS");
 
-        if (choose)
-        {
-            if (half)
-            {
-                if (line == 1)
-                {
-                    move_up_first(&half, hand_card, line_position, start_up, first_line_up, player_one, &error);
-                }
-                else if (line == 2)
-                {
-                    move_up(&half, hand_card, line_position, first_line_up, second_line_up, player_one, &error);
-                }
-                else if (line == 3)
-                {
-                    move_up(&half, hand_card, line_position, second_line_up, third_line_up, player_one, &error);
-                }
-                else if (line == 4)
-                {
-                    move_up(&half, hand_card, line_position, third_line_up, fourth_line_up, player_one, &error);
-                }
-                else if (line == 5)
-                {
-                    move_up(&half, hand_card, line_position, fourth_line_up, finish_up, player_one, &error);
-                }
-            }
-            else
-            {
-                if (line == 1)
-                {
-                    move_down_first(&half, hand_card, line_position, start_down, first_line_down, player_two, &error);
-                }
-                else if (line == 2)
-                {
-                    move_down(&half, hand_card, line_position, first_line_down, second_line_down, player_two, &error);
-                }
-                else if (line == 3)
-                {
-                    move_down(&half, hand_card, line_position, second_line_down, third_line_down, player_two, &error);
-                }
-                else if (line == 4)
-                {
-                    move_up(&half, hand_card, line_position, third_line_down, fourth_line_down, player_two, &error);
-                }
-                else if (line == 5)
-                {
-                    move_up(&half, hand_card, line_position, fourth_line_down, finish_down, player_two, &error);
-                }
-            }
-        }
+
+        move_by_line(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+            fourth_line_up, fourth_line_down, finish_up, finish_down, deck, player_one, player_two, &half, &error, &line, &hand_card, &line_position, &choose);
     }
 
     system("CLS");
@@ -176,15 +112,6 @@ int main()
         cout << "Player Two Wins!" << endl << endl;
     }
 
-    print_line_down(finish_up, 1, 4);
-    print_line_down(fourth_line_up, 2, 3);
-    print_line_up(third_line_up, 3, 2);
-    print_line_up(second_line_up, 4, 1);
-    print_line_up(first_line_up, 5, 0);
-    print_start_cards(start_up, start_down);
-    print_line_down(first_line_down, 5, 0);
-    print_line_down(second_line_down, 4, 1);
-    print_line_down(third_line_down, 3, 2);
-    print_line_down(fourth_line_down, 2, 3);
-    print_line_down(finish_down, 1, 4);
+    print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+        fourth_line_up, fourth_line_down, finish_up, finish_down);
 }
