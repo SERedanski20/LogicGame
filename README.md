@@ -23,7 +23,7 @@ Miini console game ( BOOLeO ), reviving a long-forgotten board game.
 - <img src="https://media.discordapp.net/attachments/815253581149896790/818134527842582578/Visual_Studio_Icon_2019.svg.png?width=541&height=541" width="20"> Visual studio - IDE
 -  <img src="https://media.discordapp.net/attachments/815253581149896790/818133539903111188/Microsoft_Word_logo.png" width="20"> Word - Documentation
 - <img src="https://media.discordapp.net/attachments/815253581149896790/818136011359518780/kisspng-microsoft-powerpoint-computer-software-microsoft-o-5b3b3927c75c49.3318087715306079118166-rem.png" width="20"> PowerPoint - Presentation
-- <img src="https://media.discordapp.net/attachments/815253581149896790/818134368848969728/1043px-Microsoft_Excel_2013_logo.svg_.png?width=551&height=541" width="20"> Excel -  QA Documentation
+- <img src="https://media.discordapp.net/attachments/815253581149896790/818134368848969728/1043px-Microsoft_Excel_2013_logo.svg_.png?width=551&height=541" width="20"> Excel -  QA Documentation    
 - 👩🏻‍💻 Programing language C++
 - <img src="https://ps.w.org/svgator/assets/icon.svg?rev=2425697" width="20"> SVGator - Logo
 - <img src="https://d33wubrfki0l68.cloudfront.net/d46686890230f394c4a5dd6008adf79bc600a240/cc827/images/transparent_icon.png" width="20"> Bannerbear - Social Media moderation 
