@@ -43,20 +43,13 @@ void select_move(vector<Card>& player, Deck& deck, int* line, int* hand_card, in
 
 void print_start_cards(bool* start_cards, bool* start_down);
 
-void print_first_line_up(Card* first_line_up);
-void print_first_line_down(Card* first_line_down);
-
-void print_second_line_up(Card* second_line_up);
-void print_second_line_down(Card* second_line_down);
-
-void print_third_line_up(Card* third_line_up);
-void print_third_line_down(Card* third_line_down);
+void print_line_up(Card* line_up, int size, int space);
+void print_line_down(Card* line_down, int size, int space);
 
 void move_up_first(bool* half, int hand_card, int line_position, bool* start_up, Card* first_line_up, vector<Card>& player_one);
 void move_down_first(bool* half, int hand_card, int line_position, bool* start_down, Card* first_line_down, vector<Card>& player_two);
 
-void move_up_second(bool* half, int hand_card, int line_position, Card* first_line_up, Card* second_line_up, vector<Card>& player_one);
-void move_down_second(bool* half, int hand_card, int line_position, Card* first_line_down, Card* second_line_down, vector<Card>& player_two);
+void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_up, vector<Card>& player_one);
+void move_down(bool* half, int hand_card, int line_position, Card* down, Card* line_down, vector<Card>& player_two);
 
-void move_up_third(bool* half, int hand_card, int line_position, Card* second_line_up, Card* third_line_up, vector<Card>& player_one);
-void move_down_third(bool* half, int hand_card, int line_position, Card* second_line_down, Card* third_line_down, vector<Card>& player_two);
+bool finish(Card* finish_up, Card* finish_down, bool* winner);
