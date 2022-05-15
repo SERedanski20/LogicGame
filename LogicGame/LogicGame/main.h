@@ -24,7 +24,7 @@ struct Deck {
     vector<Card>cards;
     int deck_size = 48;
 };
-// Booleo doc functions
+//functions
 
 void initialize(Deck& deck); // initialize the deck
 

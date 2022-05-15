@@ -21,7 +21,7 @@ void initialize(Deck& deck)
         }
     }
 }
-
+// deal cards from the deck for the players
 void deal_cards(Deck& deck, vector<Card>& player_one, vector<Card>& player_two, int num_cards)
 {
     for (int card = 0; card < num_cards; card++)
@@ -33,6 +33,7 @@ void deal_cards(Deck& deck, vector<Card>& player_one, vector<Card>& player_two, 
     }
 }
 
+//choose move parameters
 void select_move(int* line, int* hand_card, int* line_position)
 {
     cout << "   (1, 2, 3, 4, 5) Select a line: ";
@@ -73,6 +74,7 @@ void select_move(int* line, int* hand_card, int* line_position)
     }
 }
 
+// chek if there are cards left in the deck and reuse discarded cards
 void check_empty(vector<Card>& player, Deck& deck, Deck& new_deck, bool* error)
 {
     if (deck.cards.empty())
@@ -103,6 +105,7 @@ void check_empty(vector<Card>& player, Deck& deck, Deck& new_deck, bool* error)
     }
 }
 
+// choose to discard the card or play  the card
 void back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_cards, string* choose, bool* half, bool* error)
 {
     cout << "   (1 - play, 0 - discard) Discard card or play?: ";
@@ -139,6 +142,7 @@ void back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_
     }
 }
 
+// return the winner of the game
 bool finish(Card* finish_up, Card* finish_down, bool* winner)
 {
     if (finish_up[0].value == 0 || finish_up[0].value == 1)
@@ -156,7 +160,7 @@ bool finish(Card* finish_up, Card* finish_down, bool* winner)
         return false;
     }
 }
-
+// choose which gamemode you want to try
 void choose_gamemode(int* gamemode, bool* AI, bool* GM_check)
 {
     cout << "                       Gamemodes" << endl;

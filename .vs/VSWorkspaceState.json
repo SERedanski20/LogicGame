@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\LogicGame",
     "\\LogicGame\\LogicGame"
   ],
-  "SelectedNode": "\\Documentation",
+  "SelectedNode": "\\LogicGame\\LogicGame\\main.cpp",
   "PreviewInSolutionExplorer": false
 }

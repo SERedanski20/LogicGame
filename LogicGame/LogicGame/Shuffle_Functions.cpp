@@ -1,5 +1,6 @@
 #include "main.h"
 
+// shuffle deck
 void shuffle(Deck& deck)
 {
     Deck shuffled;
@@ -14,6 +15,7 @@ void shuffle(Deck& deck)
     deck = shuffled;
 }
 
+// shuffle first 6 cards
 void start_shuffle(bool* start_up, bool* start_down)
 {
     for (int i = 0; i < 6; i++)

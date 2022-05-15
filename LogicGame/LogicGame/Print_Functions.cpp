@@ -1,5 +1,6 @@
 #include "main.h"
 
+// print card view
 void print_card(const Card& card)
 {
     cout << " " << card.value << "  ";
@@ -20,6 +21,7 @@ void print_card(const Card& card)
     cout << endl;
 }
 
+// print player cards
 void print_hand(const vector<Card>& hand)
 {
     int counter = 1;
@@ -32,6 +34,7 @@ void print_hand(const vector<Card>& hand)
     }
 }
 
+// print first 6 cards
 void print_start_cards(bool* start_up, bool* start_down)
 {
     cout << setw(13);
@@ -51,6 +54,7 @@ void print_start_cards(bool* start_up, bool* start_down)
     cout << endl;
 }
 
+// print lines in (half up)
 void print_line_up(Card* line_up, int size, int space)
 {
     cout << "   Line " << space + 1 << ":   ";
@@ -69,6 +73,7 @@ void print_line_up(Card* line_up, int size, int space)
     cout << endl;
 }
 
+// print lines in (half down)
 void print_line_down(Card* line_down, int size, int space)
 {
     cout << "   Line " << space + 1 << ":   ";
@@ -87,6 +92,7 @@ void print_line_down(Card* line_down, int size, int space)
     cout << endl;
 }
 
+// print entire game map
 void print_map(bool* start_up, bool* start_down, Card* first_line_up, Card* first_line_down, Card* second_line_up,
     Card* second_line_down, Card* third_line_up, Card* third_line_down, Card* fourth_line_up, Card* fourth_line_down, Card* finish_up, Card* finish_down)
 {
@@ -105,6 +111,7 @@ void print_map(bool* start_up, bool* start_down, Card* first_line_up, Card* firs
     cout << endl << setw(23) << "player_two";
 }
 
+// print the winner
 void print_win(bool* winner)
 {
     cout << "   ---------------------------------------------" << endl;
