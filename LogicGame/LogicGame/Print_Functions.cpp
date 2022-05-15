@@ -20,15 +20,6 @@ void print_card(const Card& card)
     cout << endl;
 }
 
-void print_deck(const Deck& deck)
-{
-
-    for (Card c : deck.cards)
-    {
-        print_card(c);
-    }
-}
-
 void print_hand(const vector<Card>& hand)
 {
     int counter = 1;
@@ -95,6 +86,7 @@ void print_line_down(Card* line_down, int size, int space)
 void print_map(bool* start_up, bool* start_down, Card* first_line_up, Card* first_line_down, Card* second_line_up,
     Card* second_line_down, Card* third_line_up, Card* third_line_down, Card* fourth_line_up, Card* fourth_line_down, Card* finish_up, Card* finish_down)
 {
+    cout << setw(23) << "player_one" << endl << endl;
     print_line_down(finish_up, 1, 4);
     print_line_down(fourth_line_up, 2, 3);
     print_line_up(third_line_up, 3, 2);
@@ -106,4 +98,5 @@ void print_map(bool* start_up, bool* start_down, Card* first_line_up, Card* firs
     print_line_down(third_line_down, 3, 2);
     print_line_down(fourth_line_down, 2, 3);
     print_line_down(finish_down, 1, 4);
+    cout << endl << setw(23) << "player_two";
 }

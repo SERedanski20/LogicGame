@@ -91,32 +91,34 @@ void check_empty(vector<Card>& player, Deck& deck, bool* error)
             player.push_back(deck.cards[0]);
             deck.cards.erase(deck.cards.begin());
         }
-        else
-        {
-            if (player.size() >= 6)
-            {
-                deck.cards.push_back(player[5]);
-                player.erase(player.begin() + 5);
-            }
-        }
     }
 }
 
 void back_or_play(vector<Card>& player, Deck& deck, int* switch_cards, bool* choose, bool* half, bool* error)
 {
-    cout << "   (1 - play, 0 - back) Back card to the deck or play?: ";
+    cout << "   (1 - play, 0 - discard) Discard card or play?: ";
     cin >> *choose;
 
     if (!(*choose))
     {
-        cout << "   Which card do you want to back?: ";
+        cout << "   (1, 2, 3, 4, 5) Which card do you want to discard?: ";
         cin >> *switch_cards;
+        
+        if (*switch_cards < 6)
+        {
+            deck.cards.push_back(player[*switch_cards - 1]);
+            player.erase(player.begin() + *switch_cards - 1);
 
-        deck.cards.push_back(player[*switch_cards]);
-        player.erase(player.begin() + *switch_cards);
-
-        *half = !(*half);
-        *error = true;
+            *half = !(*half);
+            *error = true;
+        }
+        else
+        {
+            cout << "   ---------------------------------------------" << endl;
+            cout << "           Error!, invalid card entered." << endl;
+            cout << "   ---------------------------------------------" << endl << endl;
+            *error = false;
+        }
     }
 }
 

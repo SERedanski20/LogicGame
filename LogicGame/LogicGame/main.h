@@ -33,8 +33,6 @@ void deal_cards(Deck& deck, vector<Card>& player_one, vector<Card>& player_two, 
 
 void print_card(const Card& card);
 
-void print_deck(const Deck& deck);
-
 void print_hand(const vector<Card>& hand);
 
 void print_map(bool* start_up, bool* start_down, Card* first_line_up, Card* first_line_down, Card* second_line_up,

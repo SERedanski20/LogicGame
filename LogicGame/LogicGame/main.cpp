@@ -14,8 +14,6 @@ int main()
 
     deal_cards(deck, player_one, player_two, 4);
 
-    //print_deck(deck);
-
     bool start_up[6];
     bool start_down[6];
 
