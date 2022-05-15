@@ -35,21 +35,23 @@ void print_card(const Card& card);
 
 void print_hand(const vector<Card>& hand);
 
+void print_win(bool* winner);
+
 void print_map(bool* start_up, bool* start_down, Card* first_line_up, Card* first_line_down, Card* second_line_up,
     Card* second_line_down, Card* third_line_up, Card* third_line_down, Card* fourth_line_up, Card* fourth_line_down, Card* finish_up, Card* finish_down);
 
 void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* first_line_down, Card* second_line_up,
     Card* second_line_down, Card* third_line_up, Card* third_line_down, Card* fourth_line_up, Card* fourth_line_down,
     Card* finish_up, Card* finish_down, Deck& deck, vector<Card>& player_one, vector<Card>& player_two, bool* half,
-    bool* error, int* line, int* hand_card, int* line_position, bool* choose);
+    bool* error, int* line, int* hand_card, int* line_position, string* choose);
 
 void start_shuffle(bool* start_up, bool* start_down);
 
 void select_move(int* line, int* hand_card, int* line_position);
 
-void check_empty(vector<Card>& player, Deck& deck, bool* error);
+void check_empty(vector<Card>& player, Deck& deck, Deck& new_deck, bool* error);
 
-void back_or_play(vector<Card>& player, Deck& deck, int* switch_cards, bool* choose, bool* half, bool* error);
+void back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_cards, string* choose, bool* half, bool* error);
 
 void print_start_cards(bool* start_cards, bool* start_down);
 

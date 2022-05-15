@@ -9,7 +9,7 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
             if (first_line_up[line_position - 1].value != 0 && first_line_up[line_position - 1].value != 1)
             {
                 first_line_up[line_position - 1] = player_one[hand_card - 1];
-                player_one.erase(player_one.begin() + (line_position - 1));
+                player_one.erase(player_one.begin() + (hand_card - 1));
                 *half = false;
                 *error = true;
             }
@@ -36,7 +36,7 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
             if (first_line_up[line_position - 1].value != 0 && first_line_up[line_position - 1].value != 1)
             {
                 first_line_up[line_position - 1] = player_one[hand_card - 1];
-                player_one.erase(player_one.begin() + (line_position - 1));
+                player_one.erase(player_one.begin() + (hand_card - 1));
                 *half = false;
                 *error = true;
             }
@@ -64,7 +64,7 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
             if (first_line_up[line_position - 1].value != 0 && first_line_up[line_position - 1].value != 1)
             {
                 first_line_up[line_position - 1] = player_one[hand_card - 1];
-                player_one.erase(player_one.begin() + (line_position - 1));
+                player_one.erase(player_one.begin() + (hand_card - 1));
                 *half = false;
                 *error = true;
             }
@@ -95,7 +95,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
             if (first_line_down[line_position - 1].value != 0 && first_line_down[line_position - 1].value != 1)
             {
                 first_line_down[line_position - 1] = player_two[hand_card - 1];
-                player_two.erase(player_two.begin() + (line_position - 1));
+                player_two.erase(player_two.begin() + (hand_card - 1));
                 *half = true;
                 *error = true;
             }
@@ -122,7 +122,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
             if (first_line_down[line_position - 1].value != 0 && first_line_down[line_position - 1].value != 1)
             {
                 first_line_down[line_position - 1] = player_two[hand_card - 1];
-                player_two.erase(player_two.begin() + (line_position - 1));
+                player_two.erase(player_two.begin() + (hand_card - 1));
                 *half = true;
                 *error = true;
             }
@@ -149,7 +149,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
             if (first_line_down[line_position - 1].value != 0 && first_line_down[line_position - 1].value != 1)
             {
                 first_line_down[line_position - 1] = player_two[hand_card - 1];
-                player_two.erase(player_two.begin() + (line_position - 1));
+                player_two.erase(player_two.begin() + (hand_card - 1));
                 *half = true;
                 *error = true;
             }
@@ -182,7 +182,7 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
                 if (line_up[line_position - 1].value != 0 && line_up[line_position - 1].value != 1)
                 {
                     line_up[line_position - 1] = player_one[hand_card - 1];
-                    player_one.erase(player_one.begin() + (line_position - 1));
+                    player_one.erase(player_one.begin() + (hand_card - 1));
                     *half = false;
                     *error = true;
                 }
@@ -220,7 +220,7 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
                 if (line_up[line_position - 1].value != 0 && line_up[line_position - 1].value != 1)
                 {
                     line_up[line_position - 1] = player_one[hand_card - 1];
-                    player_one.erase(player_one.begin() + (line_position - 1));
+                    player_one.erase(player_one.begin() + (hand_card - 1));
                     *half = false;
                     *error = true;
                 }
@@ -258,7 +258,7 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
                 if (line_up[line_position - 1].value != 0 && line_up[line_position - 1].value != 1)
                 {
                     line_up[line_position - 1] = player_one[hand_card - 1];
-                    player_one.erase(player_one.begin() + (line_position - 1));
+                    player_one.erase(player_one.begin() + (hand_card - 1));
                     *half = false;
                     *error = true;
                 }
@@ -300,7 +300,7 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
                 if (line_down[line_position - 1].value != 0 && line_down[line_position - 1].value != 1)
                 {
                     line_down[line_position - 1] = player_two[hand_card - 1];
-                    player_two.erase(player_two.begin() + (line_position - 1));
+                    player_two.erase(player_two.begin() + (hand_card - 1));
                     *half = true;
                     *error = true;
                 }
@@ -338,7 +338,7 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
                 if (line_down[line_position - 1].value != 0 && line_down[line_position - 1].value != 1)
                 {
                     line_down[line_position - 1] = player_two[hand_card - 1];
-                    player_two.erase(player_two.begin() + (line_position - 1));
+                    player_two.erase(player_two.begin() + (hand_card - 1));
                     *half = true;
                     *error = true;
                 }
@@ -376,7 +376,7 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
                 if (line_down[line_position - 1].value != 0 && line_down[line_position - 1].value != 1)
                 {
                     line_down[line_position - 1] = player_two[hand_card - 1];
-                    player_two.erase(player_two.begin() + (line_position - 1));
+                    player_two.erase(player_two.begin() + (hand_card - 1));
                     *half = true;
                     *error = true;
                 }
@@ -410,172 +410,183 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
 void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* first_line_down, Card* second_line_up,
     Card* second_line_down, Card* third_line_up, Card* third_line_down, Card* fourth_line_up, Card* fourth_line_down,
     Card* finish_up, Card* finish_down, Deck& deck, vector<Card>& player_one, vector<Card>& player_two, bool* half,
-    bool* error, int* line, int* hand_card, int* line_position, bool* choose)
+    bool* error, int* line, int* hand_card, int* line_position, string* choose)
 {
-    if (*choose)
+
+    if (*choose != "1" && *choose != "0")
     {
-        if (*half)
+        cout << "   ---------------------------------------------" << endl;
+        cout << "           Error!, invalid move entered." << endl;
+        cout << "   ---------------------------------------------" << endl << endl;
+        *error = false;
+    }
+    else
+    {
+        if (*choose == "1")
         {
-            if (*line > 5)
+            if (*half)
             {
-                cout << "   -------------------------------------------" << endl;
-                cout << "          Error!, invalid line entered." << endl;
-                cout << "   -------------------------------------------" << endl << endl;
-                *error = false;
+                if (*line > 5)
+                {
+                    cout << "   -------------------------------------------" << endl;
+                    cout << "          Error!, invalid line entered." << endl;
+                    cout << "   -------------------------------------------" << endl << endl;
+                    *error = false;
+                }
+                else
+                {
+                    if (*line == 1)
+                    {
+                        if (*line_position > 5 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_up_first(half, *hand_card, *line_position, start_up, first_line_up, player_one, error);
+                        }
+                    }
+                    else if (*line == 2)
+                    {
+                        if (*line_position > 4 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_up(half, *hand_card, *line_position, first_line_up, second_line_up, player_one, error);
+                        }
+                    }
+                    else if (*line == 3)
+                    {
+                        if (*line_position > 3 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_up(half, *hand_card, *line_position, second_line_up, third_line_up, player_one, error);
+                        }
+                    }
+                    else if (*line == 4)
+                    {
+                        if (*line_position > 2 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_up(half, *hand_card, *line_position, third_line_up, fourth_line_up, player_one, error);
+                        }
+                    }
+                    else if (*line == 5)
+                    {
+                        if (*line_position > 1 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_up(half, *hand_card, *line_position, fourth_line_up, finish_up, player_one, error);
+                        }
+                    }
+                }
             }
             else
             {
-                if (*line == 1)
+                if (*line > 5)
                 {
-                    if (*line_position > 5 || *hand_card > 5)
-                    {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
-                    }
-                    else
-                    {
-                        move_up_first(half, *hand_card,* line_position, start_up, first_line_up, player_one, error);
-                    }
+                    cout << "   -----------------------------------------------" << endl;
+                    cout << "      Error!, invalid position or card entered." << endl;
+                    cout << "   -----------------------------------------------" << endl << endl;
+                    *error = false;
                 }
-                else if (*line == 2)
+                else
                 {
-                    if (*line_position > 4 || *hand_card > 5)
+                    if (*line == 1)
                     {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
+                        if (*line_position > 5 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_down_first(half, *hand_card, *line_position, start_down, first_line_down, player_two, error);
+                        }
                     }
-                    else
+                    else if (*line == 2)
                     {
-                        move_up(half, *hand_card, *line_position, first_line_up, second_line_up, player_one, error);
+                        if (*line_position > 4 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_down(half, *hand_card, *line_position, first_line_down, second_line_down, player_two, error);
+                        }
                     }
-                }
-                else if (*line == 3)
-                {
-                    if (*line_position > 3 || *hand_card > 5)
+                    else if (*line == 3)
                     {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
+                        if (*line_position > 3 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_down(half, *hand_card, *line_position, second_line_down, third_line_down, player_two, error);
+                        }
                     }
-                    else
+                    else if (*line == 4)
                     {
-                        move_up(half, *hand_card, *line_position, second_line_up, third_line_up, player_one, error);
+                        if (*line_position > 2 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_up(half, *hand_card, *line_position, third_line_down, fourth_line_down, player_two, error);
+                        }
                     }
-                }
-                else if (*line == 4)
-                {
-                    if (*line_position > 2 || *hand_card > 5)
+                    else if (*line == 5)
                     {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
-                    }
-                    else
-                    {
-                        move_up(half, *hand_card, *line_position, third_line_up, fourth_line_up, player_one, error);
-                    }
-                }
-                else if (*line == 5)
-                {
-                    if (*line_position > 1 || *hand_card > 5)
-                    {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
-                    }
-                    else
-                    {
-                        move_up(half, *hand_card, *line_position, fourth_line_up, finish_up, player_one, error);
-                    }
-                }
-            }
-        }
-        else
-        {
-            if (*line > 5)
-            {
-                cout << "   -----------------------------------------------" << endl;
-                cout << "      Error!, invalid position or card entered." << endl;
-                cout << "   -----------------------------------------------" << endl << endl;
-                *error = false;
-            }
-            else
-            {
-                if (*line == 1)
-                {
-                    if (*line_position > 5 || *hand_card > 5)
-                    {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
-                    }
-                    else
-                    {
-                        move_down_first(half, *hand_card, *line_position, start_down, first_line_down, player_two, error);
-                    }
-                }
-                else if (*line == 2)
-                {
-                    if (*line_position > 4 || *hand_card > 5)
-                    {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
-                    }
-                    else
-                    {
-                        move_down(half, *hand_card, *line_position, first_line_down, second_line_down, player_two, error);
-                    }
-                }
-                else if (*line == 3)
-                {
-                    if (*line_position > 3 || *hand_card > 5)
-                    {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
-                    }
-                    else
-                    {
-                        move_down(half, *hand_card, *line_position, second_line_down, third_line_down, player_two, error);
-                    }
-                }
-                else if (*line == 4)
-                {
-                    if (*line_position > 2 || *hand_card > 5)
-                    {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
-                    }
-                    else
-                    {
-                        move_up(half, *hand_card, *line_position, third_line_down, fourth_line_down, player_two, error);
-                    }
-                }
-                else if (*line == 5)
-                {
-                    if (*line_position > 1 || *hand_card > 5)
-                    {
-                        cout << "   -----------------------------------------------" << endl;
-                        cout << "      Error!, invalid position or card entered." << endl;
-                        cout << "   -----------------------------------------------" << endl << endl;
-                        *error = false;
-                    }
-                    else
-                    {
-                        move_up(half, *hand_card, *line_position, fourth_line_down, finish_down, player_two, error);
+                        if (*line_position > 1 || *hand_card > 5)
+                        {
+                            cout << "   -----------------------------------------------" << endl;
+                            cout << "      Error!, invalid position or card entered." << endl;
+                            cout << "   -----------------------------------------------" << endl << endl;
+                            *error = false;
+                        }
+                        else
+                        {
+                            move_up(half, *hand_card, *line_position, fourth_line_down, finish_down, player_two, error);
+                        }
                     }
                 }
             }

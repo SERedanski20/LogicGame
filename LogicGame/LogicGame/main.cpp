@@ -5,6 +5,7 @@ int main()
     srand(time(NULL));
 
     Deck deck;
+    Deck new_deck;
 
     initialize(deck);
     shuffle(deck);
@@ -34,8 +35,8 @@ int main()
     Card finish_up[1];
     Card finish_down[1];
 
+    string choose;
     bool error = true;
-    bool choose;
     bool winner;
     bool half = true;
     int line;
@@ -47,7 +48,7 @@ int main()
     {
         if (half)
         {
-            check_empty(player_one, deck, &error);
+            check_empty(player_one, deck, new_deck, &error);
 
             cout << endl << "   Player One:" << endl;
             cout << endl << "   Cards:" << endl;
@@ -60,16 +61,16 @@ int main()
 
             cout << endl << endl;
 
-            back_or_play(player_one, deck, &switch_cards, &choose, &half, &error);
+            back_or_play(player_one, deck, new_deck, &switch_cards, &choose, &half, &error);
 
-            if (choose)
+            if (choose == "1")
             {
                 select_move(&line, &hand_card, &line_position);
             }
         }
         else
         {
-            check_empty(player_two, deck, &error);
+            check_empty(player_two, deck, new_deck, &error);
 
             cout << endl << "   Player Two:" << endl;
             cout << endl << "   Cards:" << endl;
@@ -82,9 +83,9 @@ int main()
 
             cout << endl << endl;
 
-            back_or_play(player_two, deck, &switch_cards, &choose, &half, &error);
+            back_or_play(player_two, deck, new_deck, &switch_cards, &choose, &half, &error);
 
-            if (choose)
+            if (choose == "1")
             {
                 select_move(&line, &hand_card, &line_position);
             }
@@ -99,16 +100,7 @@ int main()
 
     system("CLS");
 
-    cout << "Congratulations!" << endl << endl;
-
-    if (winner)
-    {
-        cout << "Player One Wins!" << endl << endl;
-    }
-    else
-    {
-        cout << "Player Two Wins!" << endl << endl;
-    }
+    print_win(&winner);
 
     print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
         fourth_line_up, fourth_line_down, finish_up, finish_down);

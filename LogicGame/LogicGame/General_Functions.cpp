@@ -73,15 +73,24 @@ void select_move(int* line, int* hand_card, int* line_position)
     }
 }
 
-void check_empty(vector<Card>& player, Deck& deck, bool* error)
+void check_empty(vector<Card>& player, Deck& deck, Deck& new_deck, bool* error)
 {
-
     if (deck.cards.empty())
     {
-        cout << endl;
-        cout << "   ----------------------------------------------" << endl;
-        cout << "        There are no cards left in the deck!" << endl;
-        cout << "   ----------------------------------------------" << endl << endl;
+        if (new_deck.cards.empty())
+        {
+            cout << endl;
+            cout << "   ----------------------------------------------" << endl;
+            cout << "        There are no cards left in the deck!" << endl;
+            cout << "   ----------------------------------------------" << endl << endl;
+        }
+        else
+        {
+            Deck clear_deck;
+            deck = new_deck;
+            shuffle(deck);
+            new_deck = clear_deck;
+        }
     }
     else
     {
@@ -94,30 +103,40 @@ void check_empty(vector<Card>& player, Deck& deck, bool* error)
     }
 }
 
-void back_or_play(vector<Card>& player, Deck& deck, int* switch_cards, bool* choose, bool* half, bool* error)
+void back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_cards, string* choose, bool* half, bool* error)
 {
     cout << "   (1 - play, 0 - discard) Discard card or play?: ";
     cin >> *choose;
 
-    if (!(*choose))
+    if (*choose != "1" && *choose != "0")
     {
-        cout << "   (1, 2, 3, 4, 5) Which card do you want to discard?: ";
-        cin >> *switch_cards;
-        
-        if (*switch_cards < 6)
+        cout << "   ---------------------------------------------" << endl;
+        cout << "           Error!, invalid move entered." << endl;
+        cout << "   ---------------------------------------------" << endl << endl;
+        *error = false;
+    }
+    else
+    {
+        if (*choose == "0")
         {
-            deck.cards.push_back(player[*switch_cards - 1]);
-            player.erase(player.begin() + *switch_cards - 1);
+            cout << "   (1, 2, 3, 4, 5) Which card do you want to discard?: ";
+            cin >> *switch_cards;
 
-            *half = !(*half);
-            *error = true;
-        }
-        else
-        {
-            cout << "   ---------------------------------------------" << endl;
-            cout << "           Error!, invalid card entered." << endl;
-            cout << "   ---------------------------------------------" << endl << endl;
-            *error = false;
+            if (*switch_cards < 6)
+            {
+                new_deck.cards.push_back(player[*switch_cards - 1]);
+                player.erase(player.begin() + *switch_cards - 1);
+
+                *half = !(*half);
+                *error = true;
+            }
+            else
+            {
+                cout << "   ---------------------------------------------" << endl;
+                cout << "           Error!, invalid card entered." << endl;
+                cout << "   ---------------------------------------------" << endl << endl;
+                *error = false;
+            }
         }
     }
 }
