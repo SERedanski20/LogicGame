@@ -122,17 +122,18 @@ void back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_
             cout << "   (1, 2, 3, 4, 5) Which card do you want to discard?: ";
             cin >> *switch_cards;
 
-            if (*switch_cards < 6)
+            if (*switch_cards > 6 || *switch_cards < 1 || cin.fail())
+            {
+                *error = false;
+                cin.clear();
+            }
+            else
             {
                 new_deck.cards.push_back(player[*switch_cards - 1]);
                 player.erase(player.begin() + *switch_cards - 1);
 
                 *half = !(*half);
                 *error = true;
-            }
-            else
-            {
-                *error = false;
             }
         }
     }
