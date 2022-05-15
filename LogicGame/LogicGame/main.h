@@ -12,7 +12,7 @@ using namespace std;
 
 enum Value { FALSE, TRUE };
 enum Operator { AND, OR, XOR };
-//main strctures (variables)
+// main structures (variables)
 struct Card {
     Value value;
     Operator operation;
@@ -24,9 +24,9 @@ struct Deck {
     vector<Card>cards;
     int deck_size = 48;
 };
-//Booleo doc functions
+// Booleo doc functions
 
-void initialize(Deck& deck); //initialize the deck
+void initialize(Deck& deck); // initialize the deck
 
 void shuffle(Deck& deck); // shuffle the deck
 
@@ -48,17 +48,17 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
 
 void start_shuffle(bool* start_up, bool* start_down); // shuffle the start cards of the game
 
-void select_move(int* line, int* hand_card, int* line_position); // select where do the player want to move the card
+void select_move(int* line, int* hand_card, int* line_position); // select where the player wants to move the card
 
 void check_empty(vector<Card>& player, Deck& deck, Deck& new_deck, bool* error); // check if the deck is empty
 
 void back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_cards, string* choose, bool* half, bool* error); // asks the player if he wants to discard a card or
                                                                                                                                  // to move it
 
-void print_start_cards(bool* start_cards, bool* start_down); // print the start cards of the game
+void print_start_cards(bool* start_cards, bool* start_down); // print the starting cards of the game
 
-void print_line_up(Card* line_up, int size, int space); // print cards on the nex UP line
-void print_line_down(Card* line_down, int size, int space); // print cards on the nex DOWN line
+void print_line_up(Card* line_up, int size, int space); // print cards on the next UP line
+void print_line_down(Card* line_down, int size, int space); // print cards on the next DOWN line
 
 void move_up_first(bool* half, int hand_card, int line_position, bool* start_up, Card* first_line_up, vector<Card>& player_one, bool* error); // move the selected card in the first line UP
 void move_down_first(bool* half, int hand_card, int line_position, bool* start_down, Card* first_line_down, vector<Card>& player_two, bool* error); // move the selected card in the first line DOWN
@@ -81,4 +81,4 @@ void AI_move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card
 
 void AI_back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_cards, string* choose, bool* half, bool* error); // AI discards a card or play
 
-void choose_gamemode(int* gamemode, bool* AI, bool* GM_check); // asks the player which gamemode does he want to play
+void choose_gamemode(int* gamemode, bool* AI, bool* GM_check); // asks the player which gamemode he wants to play

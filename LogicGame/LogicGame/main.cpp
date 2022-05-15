@@ -56,9 +56,9 @@ int main()
 
         system("CLS");
 
-        while (!finish(finish_up, finish_down, &winner))            // loop while someone wins
+        while (!finish(finish_up, finish_down, &winner))            // loop until someone wins
         {
-            if (half)                                               // checks in which half should do the move
+            if (half)                                               // checks which half should do the move
             {
 
                 check_empty(player_one, deck, new_deck, &error);

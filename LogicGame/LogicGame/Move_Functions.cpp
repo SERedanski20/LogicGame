@@ -16,7 +16,7 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
             else
             {
                 cout << "   ---------------------------------------------" << endl;
-                cout << "           There is already a card hare!" << endl;
+                cout << "           There is already a card here!" << endl;
                 cout << "   ---------------------------------------------" << endl << endl;
                 *error = false;
             }
@@ -43,7 +43,7 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
             else
             {
                 cout << "   ---------------------------------------------" << endl;
-                cout << "           There is already a card hare!" << endl;
+                cout << "           There is already a card here!" << endl;
                 cout << "   ---------------------------------------------" << endl << endl;
                 *error = false;
             }
@@ -71,7 +71,7 @@ void move_up_first(bool* half, int hand_card, int line_position, bool* start_up,
             else
             {
                 cout << "   ---------------------------------------------" << endl;
-                cout << "           There is already a card hare!" << endl;
+                cout << "           There is already a card here!" << endl;
                 cout << "   ---------------------------------------------" << endl << endl;
                 *error = false;
             }
@@ -102,7 +102,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
             else
             {
                 cout << "   ---------------------------------------------" << endl;
-                cout << "           There is already a card hare!" << endl;
+                cout << "           There is already a card here!" << endl;
                 cout << "   ---------------------------------------------" << endl << endl;
                 *error = false;
             }
@@ -129,7 +129,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
             else
             {
                 cout << "   ---------------------------------------------" << endl;
-                cout << "           There is already a card hare!" << endl;
+                cout << "           There is already a card here!" << endl;
                 cout << "   ---------------------------------------------" << endl << endl;
                 *error = false;
             }
@@ -156,7 +156,7 @@ void move_down_first(bool* half, int hand_card, int line_position, bool* start_d
             else
             {
                 cout << "   ---------------------------------------------" << endl;
-                cout << "           There is already a card hare!" << endl;
+                cout << "           There is already a card here!" << endl;
                 cout << "   ---------------------------------------------" << endl << endl;
                 *error = false;
             }
@@ -189,7 +189,7 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
                 else
                 {
                     cout << "   ---------------------------------------------" << endl;
-                    cout << "           There is already a card hare!" << endl;
+                    cout << "           There is already a card here!" << endl;
                     cout << "   ---------------------------------------------" << endl << endl;
                     *error = false;
                 }
@@ -227,7 +227,7 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
                 else
                 {
                     cout << "   ---------------------------------------------" << endl;
-                    cout << "           There is already a card hare!" << endl;
+                    cout << "           There is already a card here!" << endl;
                     cout << "   ---------------------------------------------" << endl << endl;
                     *error = false;
                 }
@@ -265,7 +265,7 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
                 else
                 {
                     cout << "   ---------------------------------------------" << endl;
-                    cout << "           There is already a card hare!" << endl;
+                    cout << "           There is already a card here!" << endl;
                     cout << "   ---------------------------------------------" << endl << endl;
                     *error = false;
                 }
@@ -307,7 +307,7 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
                 else
                 {
                     cout << "   ---------------------------------------------" << endl;
-                    cout << "           There is already a card hare!" << endl;
+                    cout << "           There is already a card here!" << endl;
                     cout << "   ---------------------------------------------" << endl << endl;
                     *error = false;
                 }
@@ -345,7 +345,7 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
                 else
                 {
                     cout << "   ---------------------------------------------" << endl;
-                    cout << "           There is already a card hare!" << endl;
+                    cout << "           There is already a card here!" << endl;
                     cout << "   ---------------------------------------------" << endl << endl;
                     *error = false;
                 }
@@ -383,7 +383,7 @@ void move_down(bool* half, int hand_card, int line_position, Card* down, Card* l
                 else
                 {
                     cout << "   ---------------------------------------------" << endl;
-                    cout << "           There is already a card hare!" << endl;
+                    cout << "           There is already a card here!" << endl;
                     cout << "   ---------------------------------------------" << endl << endl;
                     *error = false;
                 }
