@@ -132,9 +132,6 @@ void back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_
             }
             else
             {
-                cout << "   ---------------------------------------------" << endl;
-                cout << "           Error!, invalid card entered." << endl;
-                cout << "   ---------------------------------------------" << endl << endl;
                 *error = false;
             }
         }
