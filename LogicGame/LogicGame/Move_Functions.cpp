@@ -571,7 +571,7 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                         }
                         else
                         {
-                            move_up(half, *hand_card, *line_position, third_line_down, fourth_line_down, player_two, error);
+                            move_down(half, *hand_card, *line_position, third_line_down, fourth_line_down, player_two, error);
                         }
                     }
                     else if (*line == 5)
@@ -585,7 +585,7 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                         }
                         else
                         {
-                            move_up(half, *hand_card, *line_position, fourth_line_down, finish_down, player_two, error);
+                            move_down(half, *hand_card, *line_position, fourth_line_down, finish_down, player_two, error);
                         }
                     }
                 }

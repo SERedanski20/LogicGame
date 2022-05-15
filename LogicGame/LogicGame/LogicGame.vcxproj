@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AI_Functions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="General_Functions.cpp" />
     <ClCompile Include="Move_Functions.cpp" />

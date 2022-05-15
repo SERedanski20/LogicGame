@@ -158,3 +158,28 @@ bool finish(Card* finish_up, Card* finish_down, bool* winner)
         return false;
     }
 }
+
+void choose_gamemode(int* gamemode, bool* AI, bool* GM_check)
+{
+    cout << "                       Gamemodes" << endl;
+    cout << "Player VS Player - 1:      /      Computer VS Player - 2: " << endl;
+    cout << "Choose your Gamemode: ";
+    cin >> *gamemode;
+
+    if (*gamemode != 1 && *gamemode != 2)
+    {
+        system("CLS");
+        cout << "   ---------------------------------------------" << endl;
+        cout << "                 Invalid Gamemode!" << endl;
+        cout << "   ---------------------------------------------" << endl << endl << endl;
+        *GM_check = false;
+    }
+    else if (*gamemode == 1)
+    {
+        *AI = false;
+    }
+    else
+    {
+        *AI = true;
+    }
+}

@@ -65,3 +65,18 @@ void move_up(bool* half, int hand_card, int line_position, Card* up, Card* line_
 void move_down(bool* half, int hand_card, int line_position, Card* down, Card* line_down, vector<Card>& player_two, bool* error);
 
 bool finish(Card* finish_up, Card* finish_down, bool* winner);
+
+void AI_select_move(Card* first_line_down, Card* second_line_down, Card* third_line_down, Card* fourth_line_down, int* line, int* hand_card, int* line_position);
+
+void AI_move_down_first(bool* half, int hand_card, int line_position, bool* start_down, Card* first_line_down, vector<Card>& player_two, bool* error);
+
+void AI_move_down(bool* half, int hand_card, int line_position, Card* down, Card* line_down, vector<Card>& player_two, bool* error);
+
+void AI_move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* first_line_down, Card* second_line_up,
+    Card* second_line_down, Card* third_line_up, Card* third_line_down, Card* fourth_line_up, Card* fourth_line_down,
+    Card* finish_up, Card* finish_down, Deck& deck, vector<Card>& player_one, vector<Card>& player_two, bool* half,
+    bool* error, int* line, int* hand_card, int* line_position, string* choose);
+
+void AI_back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_cards, string* choose, bool* half, bool* error);
+
+void choose_gamemode(int* gamemode, bool* AI, bool* GM_check);

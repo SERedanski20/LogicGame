@@ -36,6 +36,9 @@ int main()
     Card finish_down[1];
 
     string choose;
+    int gamemode;
+    bool GM_check = true;
+    bool AI;
     bool error = true;
     bool winner;
     bool half = true;
@@ -44,64 +47,103 @@ int main()
     int line_position;
     int switch_cards;
 
-    while (!finish(finish_up, finish_down, &winner))
+    choose_gamemode(&gamemode, &AI, &GM_check);
+
+    if (GM_check)
     {
-        if (half)
+
+        system("CLS");
+
+        while (!finish(finish_up, finish_down, &winner))
         {
-            check_empty(player_one, deck, new_deck, &error);
-
-            cout << endl << "   Player One:" << endl;
-            cout << endl << "   Cards:" << endl;
-            print_hand(player_one);
-            cout << endl << endl;
-
-
-            print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
-                fourth_line_up, fourth_line_down, finish_up, finish_down);
-
-            cout << endl << endl;
-
-            back_or_play(player_one, deck, new_deck, &switch_cards, &choose, &half, &error);
-
-            if (choose == "1")
+            if (half)
             {
-                select_move(&line, &hand_card, &line_position);
+
+                check_empty(player_one, deck, new_deck, &error);
+
+                cout << endl << "   Player One:" << endl;
+                cout << endl << "   Cards:" << endl;
+                print_hand(player_one);
+                cout << endl << endl;
+
+
+                print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+                    fourth_line_up, fourth_line_down, finish_up, finish_down);
+
+                cout << endl << endl;
+
+                    back_or_play(player_one, deck, new_deck, &switch_cards, &choose, &half, &error);
+
+                if (choose == "1")
+                {
+                    select_move(&line, &hand_card, &line_position);
+                }
+
+                    system("CLS");
+
+                move_by_line(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+                    fourth_line_up, fourth_line_down, finish_up, finish_down, deck, player_one, player_two, &half, &error, &line, &hand_card, &line_position, &choose);
             }
-        }
-        else
-        {
-            check_empty(player_two, deck, new_deck, &error);
-
-            cout << endl << "   Player Two:" << endl;
-            cout << endl << "   Cards:" << endl;
-            print_hand(player_two);
-            cout << endl;
-
-
-            print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
-                fourth_line_up, fourth_line_down, finish_up, finish_down);
-
-            cout << endl << endl;
-
-            back_or_play(player_two, deck, new_deck, &switch_cards, &choose, &half, &error);
-
-            if (choose == "1")
+            else
             {
-                select_move(&line, &hand_card, &line_position);
+                check_empty(player_two, deck, new_deck, &error);
+
+                cout << endl << "   Player Two:" << endl;
+                cout << endl << "   Cards:" << endl;
+                print_hand(player_two);
+                cout << endl;
+
+
+                print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+                    fourth_line_up, fourth_line_down, finish_up, finish_down);
+
+                cout << endl << endl;
+
+                if (AI)
+                {
+                    AI_back_or_play(player_two, deck, new_deck, &switch_cards, &choose, &half, &error);
+                }
+                else
+                {
+                    back_or_play(player_two, deck, new_deck, &switch_cards, &choose, &half, &error);
+                }
+
+                if (AI)
+                {
+                    if (choose == "1")
+                    {
+                        AI_select_move(first_line_down, second_line_down, third_line_down, fourth_line_down, &line, &hand_card, &line_position);
+                    }
+                }
+                else
+                {
+                    if (choose == "1")
+                    {
+                        select_move(&line, &hand_card, &line_position);
+                    }
+                }
+
+                    system("CLS");
+
+                if (AI)
+                {
+                    AI_move_by_line(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+                        fourth_line_up, fourth_line_down, finish_up, finish_down, deck, player_one, player_two, &half, &error, &line, &hand_card, &line_position, &choose);
+                }
+                else
+                {
+                    move_by_line(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+                        fourth_line_up, fourth_line_down, finish_up, finish_down, deck, player_one, player_two, &half, &error, &line, &hand_card, &line_position, &choose);
+                }
             }
+
         }
 
         system("CLS");
 
+        print_win(&winner);
 
-        move_by_line(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
-            fourth_line_up, fourth_line_down, finish_up, finish_down, deck, player_one, player_two, &half, &error, &line, &hand_card, &line_position, &choose);
+        print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
+            fourth_line_up, fourth_line_down, finish_up, finish_down);
     }
-
-    system("CLS");
-
-    print_win(&winner);
-
-    print_map(start_up, start_down, first_line_up, first_line_down, second_line_up, second_line_down, third_line_up, third_line_down,
-        fourth_line_up, fourth_line_down, finish_up, finish_down);
 }

@@ -118,7 +118,7 @@ void print_win(bool* winner)
     }
     else
     {
-        cout << "            Player One Wins!" << endl;
+        cout << "            Player Two Wins!" << endl;
         cout << "           -----------------" << endl << endl;
     }
 }
