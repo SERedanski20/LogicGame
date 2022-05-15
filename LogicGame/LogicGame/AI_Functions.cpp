@@ -379,7 +379,7 @@ void AI_move_down(bool* half, int hand_card, int line_position, Card* down, Card
 
 void AI_back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* switch_cards, string* choose, bool* half, bool* error)
 {
-    int random = rand() % 100 + 1;
+    int random = rand() % 40 + 1;
     if (random % 2 == 0)
     {
         *choose = "1";
@@ -409,50 +409,6 @@ void AI_back_or_play(vector<Card>& player, Deck& deck, Deck& new_deck, int* swit
         *choose = "1";
     }
     else if (random % 19 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 23 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 29 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 31 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 37 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 41 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 43 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 47 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 53 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 59 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 61 == 0)
-    {
-        *choose = "1";
-    }
-    else if (random % 67 == 0)
     {
         *choose = "1";
     }

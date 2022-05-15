@@ -426,23 +426,25 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
         {
             if (*half)
             {
-                if (*line > 5)
+                if (*line > 5 || *line < 1 || cin.fail())
                 {
                     cout << "   -------------------------------------------" << endl;
                     cout << "          Error!, invalid line entered." << endl;
                     cout << "   -------------------------------------------" << endl << endl;
                     *error = false;
+                    cin.clear();
                 }
                 else
                 {
                     if (*line == 1)
                     {
-                        if (*line_position > 5 || *hand_card > 5)
+                        if (*line_position > 5 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
@@ -451,12 +453,13 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                     }
                     else if (*line == 2)
                     {
-                        if (*line_position > 4 || *hand_card > 5)
+                        if (*line_position > 4 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
@@ -465,12 +468,13 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                     }
                     else if (*line == 3)
                     {
-                        if (*line_position > 3 || *hand_card > 5)
+                        if (*line_position > 3 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
@@ -479,12 +483,13 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                     }
                     else if (*line == 4)
                     {
-                        if (*line_position > 2 || *hand_card > 5)
+                        if (*line_position > 2 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
@@ -493,12 +498,13 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                     }
                     else if (*line == 5)
                     {
-                        if (*line_position > 1 || *hand_card > 5)
+                        if (*line_position > 1 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
@@ -509,23 +515,25 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
             }
             else
             {
-                if (*line > 5)
+                if (*line > 5 || *line < 1 || cin.fail())
                 {
-                    cout << "   -----------------------------------------------" << endl;
-                    cout << "      Error!, invalid position or card entered." << endl;
-                    cout << "   -----------------------------------------------" << endl << endl;
+                    cout << "   -------------------------------------------" << endl;
+                    cout << "          Error!, invalid line entered." << endl;
+                    cout << "   -------------------------------------------" << endl << endl;
                     *error = false;
+                    cin.clear();
                 }
                 else
                 {
                     if (*line == 1)
                     {
-                        if (*line_position > 5 || *hand_card > 5)
+                        if (*line_position > 5 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
@@ -534,12 +542,13 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                     }
                     else if (*line == 2)
                     {
-                        if (*line_position > 4 || *hand_card > 5)
+                        if (*line_position > 4 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
@@ -548,12 +557,13 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                     }
                     else if (*line == 3)
                     {
-                        if (*line_position > 3 || *hand_card > 5)
+                        if (*line_position > 3 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
@@ -562,12 +572,13 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                     }
                     else if (*line == 4)
                     {
-                        if (*line_position > 2 || *hand_card > 5)
+                        if (*line_position > 2 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
@@ -576,12 +587,13 @@ void move_by_line(bool* start_up, bool* start_down, Card* first_line_up, Card* f
                     }
                     else if (*line == 5)
                     {
-                        if (*line_position > 1 || *hand_card > 5)
+                        if (*line_position > 1 || *line_position < 1 || *hand_card > 5 || *hand_card < 1 || cin.fail())
                         {
                             cout << "   -----------------------------------------------" << endl;
                             cout << "      Error!, invalid position or card entered." << endl;
                             cout << "   -----------------------------------------------" << endl << endl;
                             *error = false;
+                            cin.clear();
                         }
                         else
                         {
