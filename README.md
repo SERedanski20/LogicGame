@@ -15,7 +15,7 @@ Mini console game ( BOOLeO ), reviving a long-forgotten board game.
 4. Kaloyan Lambov (QA) -  [KBLambov20](https://github.com/KBLambov20)
 ---------------------------------------------- --------------------------------------
 ###
-[Documentation and presentation]()
+[Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/seredanski20_codingburgas_bg/Ed6TCw8I0yVFsh1olG6shCsBK2Fo8f01cY3tcm4NwYq3ew?e=y1qGRZ) and [Presentation](https://prezi.com/view/4qvmwSVKwBqrqUCmpuaT/)
  ---
 
 
